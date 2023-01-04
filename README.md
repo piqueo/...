@@ -1,2 +1,9 @@
-<i>INTERNET</i>
-666:/＄dVRi41g＄~.17:/￥R52gI8eAS3YWInFL￥，##X1MVrev6VCoI1mR##PAGE
+<html>
+ <head><title>动态时间显示</title></head>
+  <script type="text/javascript">
+    setInterval("aa.innerHTML=new Date().toLocaleString();",1000);
+  </script>
+<body>
+ <label id="aa"></label>
+</body>
+</html>
