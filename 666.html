@@ -1,1 +1,14 @@
-
+<script>
+  // 利用正则表达式
+  let url = "http://www.baidu.com?name=elephant&age=25&sex=male&num=100"
+  // // 返回参数对象
+  function queryURLParams(url) {
+    let pattern = /(\w+)=(\w+)/ig; //定义正则表达式
+    let parames = {}; // 定义参数对象
+    url.replace(pattern, ($, $1, $2) => {
+      parames[$1] = $2;
+    });
+    return parames;
+  }
+  console.log(queryURLParams(url))
+</script>
