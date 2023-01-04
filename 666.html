@@ -1,14 +1,29 @@
-<script>
-  // 利用正则表达式
-  let url = "http://www.baidu.com?name=elephant&age=25&sex=male&num=100"
-  // // 返回参数对象
-  function queryURLParams(url) {
-    let pattern = /(\w+)=(\w+)/ig; //定义正则表达式
-    let parames = {}; // 定义参数对象
-    url.replace(pattern, ($, $1, $2) => {
-      parames[$1] = $2;
-    });
-    return parames;
-  }
-  console.log(queryURLParams(url))
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet"
+    href="https://gw.alipayobjects.com/os/antv/assets/lib/codemirror-5.29.0/codemirror-merged.min.css">
+  <title>live · code</title>
+</head>
+<body>
+  <main>
+    <section>
+      <button class="execute">Copy</button>
+      <button class="run">Run</button>
+      <textarea class="code"></textarea>
+    </section>
+    <section>
+      <div class="preview"></div>
+    </section>
+  </main>
+  <script src="./main.js"></script>
+</body>
+</html>
+
+作者：有朝
+链接：https://juejin.cn/post/6971081884696576007
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
