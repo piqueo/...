@@ -1,5 +1,48 @@
-<div class="dialog">
-  <div class="dialog__body">
-    <div>blalala</div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>NumberRain</title>
+  <style type="text/css">
+   canvas{
+    display: block;
+    }
+  </style>
+ </head>
+ <body>
+  <canvas id="canvas"></canvas>
+  <script>
+    function $(id){
+      return document.getElementById(id);
+    }
+   var mywindow=window.screen;
+   var canvas=$("canvas");
+   canvas.width=mywindow.width;
+   canvas.height=mywindow.height;
+   var str="0123456789abcdefghijklmnopqrstuvwxyz~!@#$%^&*()-+{}|:<>?,.";
+   str=str.split("");
+   var fontSize=16;
+   var cols=canvas.width/fontSize;
+   var drops=[];
+   for(var i=0;i<cols;i++){
+     drops[i]=1;
+   }
+   var ctx=canvas.getContext("2d");
+   function draw(){
+    ctx.fillStyle="rgba(0,0,0,0.05)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="green";
+    ctx.font=fontSize+"px arial";
+    for(var i=0;i<cols;i++){
+      var text=str[ Math.floor( Math.random() * (str.length) ) ];
+      ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+      if(drops[i]*fontSize > canvas.height || Math.random() > 0.95)
+          drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  setInterval(draw,33);
+ </script>
+</body>
+</html>
+​​<a href="https://youtube.com" target="_blank">​​）​​
